@@ -1,0 +1,342 @@
+%-------------------------
+% Resume in Latex
+% Author : Mirza Mohd Ashran Baig
+%------------------------
+
+%---- Required Packages and Functions ----
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{latexsym}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[empty]{fullpage}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{marvosym}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{cfr-lm}
+\usepackage[T1]{fontenc}
+\setlength{\multicolsep}{0pt} 
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\geometry{left=0.6cm, top=0.5cm, right=0.6cm, bottom=0.5cm}
+% Adjust margins
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+\usepackage[most]{tcolorbox}
+\tcbset{
+	frame code={}
+	center title,
+	left=0pt,
+	right=0pt,
+	top=0pt,
+	bottom=0pt,
+	colback=gray!20,
+	colframe=white,
+	width=\dimexpr\textwidth\relax,
+	enlarge left by=-2mm,
+	boxsep=4pt,
+	arc=0pt,outer arc=0pt,
+}
+
+\urlstyle{same}
+
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeCP}[1]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}
+    \end{tabular*}
+    \vspace{-1mm}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+
+\newcommand{\resumeAchieve}[2]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1}\textbf{:}\hspace{0.3mm}#2 
+    \end{tabular*}
+    \vspace{-1.4mm}
+}
+
+\newcommand{\resumeItem}[2]{
+  \item{
+    \textbf{#1}{:\hspace{0.5mm}#2 \vspace{-0.5mm}}
+  }
+}
+
+\newcommand{\resumePOR}[3]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1},\hspace{0.3mm}#2 & \textit{\small{#3}} 
+    \end{tabular*}
+    \vspace{-2mm}
+}
+
+\newcommand{\resumeSubheading}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#4}} \\
+        \textit{\footnotesize{#3}} &  \footnotesize{#2}\\
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeProject}[4]{
+\vspace{0.5mm}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+        \textbf{#1} & \textit{\footnotesize{#3}} \\
+        \footnotesize{\textit{#2}} & \footnotesize{#4}
+    \end{tabular*}
+    \vspace{-2.4mm}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+% \renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemi}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,labelsep=0mm]}
+\newcommand{\resumeHeadingSkillStart}{\begin{itemize}[leftmargin=*,itemsep=1.7mm, rightmargin=2ex]}
+\newcommand{\resumeItemListStart}{\begin{justify}\begin{itemize}[leftmargin=3ex, rightmargin=2ex, noitemsep,labelsep=1.2mm,itemsep=0mm]\small}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{2mm}}
+
+\newcommand{\resumeHeadingSkillEnd}{\end{itemize}\vspace{-2mm}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\end{justify}\vspace{-2mm}}
+\newcommand{\cvsection}[1]{%
+\vspace{2mm}
+\begin{tcolorbox}
+    \textbf{\large #1}
+\end{tcolorbox}
+    \vspace{-4mm}
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+%---- End of Packages and Functions ------
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%
+%%%%%% DEFINE ELEMENTS HERE %%%%%%%
+\newcommand{\name}{Mirza Mohd Ashran Baig} % Your Name
+\newcommand{\course}{} % Your Course
+\newcommand{\roll}{} % Your Roll No.
+\newcommand{\phone}{XXXXXXXXXX} % Your Phone Number
+\newcommand{\emaila}{ashranbaig1310@gmail.com} %Email 1
+\newcommand{\emailb}{ashranbaig1310@gmail.com} %Email 2
+\newcommand{\github}{ashranbaig} %Github
+\newcommand{\website}{link to your portfolio if any} %Website
+\newcommand{\linkedin}{ashranbaig} %linkedin
+
+
+
+
+\begin{document}
+\fontfamily{cmr}\selectfont
+%----------HEADING-----------------
+\parbox{\dimexpr\linewidth\relax}{
+\begin{tabularx}{\linewidth}{L r}
+  \textbf{\LARGE \name} & +91-\phone\\
+  
+  \course &  \href{mailto:\emailb}{\emailb}\\
+  {B.Tech - Computer Science Engineering} &  \href{https://github.com/ashranbaig}{GitHub} \\
+%   $|$ \href{\website}{Website}\\
+  {Kalinga Institute Of Industrial Technology,Bhubaneswar, Odisha} & \href{https://www.linkedin.com/in/ashranbaig/}{Linkedin}
+\end{tabularx}
+}
+
+\vspace{-1mm}
+
+%-----------EDUCATION-----------------
+
+\section{\textbf{Education}}
+\vspace{2.5mm}
+\setlength{\tabcolsep}{6pt} % Default value: 6pt
+% \renewcommand{\arraystretch}{1.1} % Default value: 1
+\small{\begin{tabularx}
+{\dimexpr\textwidth-2mm\relax}{|c|C|c|c|}
+  \hline
+  \textbf{Degree } & \textbf{Institute/Board} & \textbf{CGPA/Percentage} & \textbf{Year}\\
+  \hline
+  Bachelor of Technology & Kalinga Institute Of Industrial Technology,Bhubaneswar, Odisha & 7.10/10  & 2016-20\\
+  
+  %\hline
+  %Minor in CSE & Indian Institute of Technology, Ropar & 8.52 %(Till 6th Sem) & 2018-2022\\
+ 
+  \hline
+  Senior Secondary & St. Joseph's School (ISC) & 76.75 \% & 2016 \\
+  \hline
+  Secondary & St. Joseph's School (ICSE) & 83.66\% & 2014 \\
+  \hline
+\end{tabularx}}
+\vspace{0mm}
+
+%-----------EXPERIENCE-----------------
+\section{\textbf{Work Experience}}
+  \resumeSubHeadingListStart
+\vspace{2.5mm}
+    \resumeSubheading
+      {Hexaware Technologies }{Bengaluru, Karnataka}
+      {Senior DevOps Engineer }{Aug 2024 - Present}
+      \vspace{1.5mm}
+      \resumeItemListStart
+    \item {Designed and maintained scalable data pipelines using Snaplogic and Snowflake for efficient analytics delivery.}
+  \item Automated CI/CD pipelines via Azure DevOps (YAML), improving deployment frequency and production stability.
+  \item Provisioned infrastructure using Terraform with modules for reusability and environment-specific configurations.
+  \item Managed Azure infrastructure with emphasis on high availability, performance SLAs, and security hardening.
+  \item Monitored production systems using Prometheus and Azure Monitor; maintained 99.95\% uptime metrics.
+  \item Collaborated with data engineering, QA, and architecture teams to deploy business-critical models.
+    \resumeItemListEnd
+  
+    
+
+    % \item {More work done } .
+  \resumeSubHeadingListEnd
+\vspace{-4.5mm}
+
+\resumeSubHeadingListStart
+\vspace{2.5mm}
+    \resumeSubheading
+      {Stovl / Eximietas Design }{Bengaluru, Karnataka}
+      {Associate DevOps Engineer }{Sep 2023 - June 2024}
+      \vspace{1.5mm}
+      \resumeItemListStart
+     \item Engineered CI/CD pipelines using GitLab CI for a global EMM solution, integrating SAST, test automation, and approvals.
+  \item Provisioned cloud resources via Terraform and deployed apps with Docker and Helm charts on GKE.
+  \item Applied Infrastructure-as-Security principles: enforced policies through IaC, minimized misconfiguration risk.
+  \item Implemented observability stack using Google Cloud Monitoring to track infra and container health.
+  \item Conducted cost analysis and capacity forecasting based on load/time-based trend metrics.
+    \resumeItemListEnd
+     
+    
+    % \item {More work done } .
+  \resumeSubHeadingListEnd
+
+\resumeSubHeadingListStart
+\vspace{2.5mm}
+    \resumeSubheading
+      {KPMG Global Services }{Bengaluru, Karnataka}
+      {Associate DevOps Consultant }{Jul 2022 - Aug 2023}
+      \vspace{1.5mm}
+      \resumeItemListStart
+  \item Delivered IaC, automated pipelines, and artifact workflows for supply chain management platform.
+  \item Supported dev team enablement by conducting Terraform and Azure DevOps training.
+  \item Enhanced reliability via implementation of SLOs, monitoring coverage, and root cause practices.
+
+    \resumeItemListEnd
+  
+
+    
+    
+    % \item {More work done } .
+  \resumeSubHeadingListEnd
+
+   \resumeSubHeadingListStart
+\vspace{2.5mm}
+    \resumeSubheading
+      {Mindtree }{Bengaluru, Karnataka}
+      {DevOps Engineer / Site Reliability Engineer}{Jan 2020 - Jul 2022}
+      \vspace{1.5mm}
+      \resumeItemListStart
+    \item Supported 24/7 operations for critical production workloads, collaborating with Middle East delivery teams.
+  \item Improved pipeline reliability by remediating Jenkins/Azure DevOps failures and root causing build issues.
+  \item Applied SRE principles — incident response, monitoring, capacity planning.
+  \item Enabled traffic-based auto-scaling using predictive metrics with cost-control thresholds.
+  \item Achieved 40\% reduction in time and security issues via proactive DevSecOps policy automation.
+    \resumeItemListEnd
+  
+    
+    % \item {More work done } .
+  \resumeSubHeadingListEnd
+
+% %-----------PROJECTS-----------------
+\section{\textbf{Projects}}
+\vspace{2.5mm}
+\resumeSubHeadingListStart
+\resumeProject
+      {Enterprise Data Pipeline Modernization- AI-Driven Analytics Automation for The Carlyle Group} %Project Name
+      {USA} %Project Name, Location Name
+      {Aug 2024 - Present} %Event Dates
+
+      \resumeItemListStart
+        \item{Led a team of four engineers to design and maintain scalable data pipelines for The Carlyle Group, orchestrating ETL workflows on Azure DevOps and managing AI-integrated analytics with Snowflake and Sigma. Automated CI/CD processes, provisioned Azure infrastructure using Terraform modules, and implemented proactive monitoring with Prometheus (99.95\% uptime). Collaborated with data, QA, and architecture teams to deploy business-critical models, driving operational reliability and enabling advanced, AI-powered analytics for enterprise reporting.}
+        
+    \resumeItemListEnd
+    \newpage
+\vspace{2.5mm}
+    
+    \resumeProject
+      {Multinational Hotel  Booking Platform in the Middle East} %Project Name
+      {Dubai} %Project Name, Location Name
+      {Jan 2020 - Jul 2022} %Event Dates
+     {\href{https://www.jumeirah.com/en/}{\textbf{link to the project}}} %Website
+    % {}
+      \resumeItemListStart
+        \item{I led a cross-functional team of 4 DevOps/SRE engineers, overseeing continuous integration pipelines, infrastructure automation, and observability initiatives. Key responsibilities included remediating CI/CD instability (Jenkins, Azure DevOps), managing auto-healing infrastructure, and applying SRE principles like incident management, SLO-based monitoring, and capacity planning. We implemented predictive auto-scaling strategies and proactive cost control mechanisms to optimize hosting costs during traffic surges.
+
+Our DevSecOps automation initiative reduced security incidents and manual patching overhead, resulting in a 40\% improvement in operational efficiency and enhanced platform uptime during seasonal high-load periods.}
+        
+    \resumeItemListEnd
+
+
+     
+
+\vspace{1mm}
+\resumeSubHeadingListStart
+\section{\textbf{Technical Expertise}}
+\item{\textbf{Cloud Platforms: }}{Azure (IaaS, PaaS), GCP (GKE), Azure Migrate}
+\item{\textbf{Infrastructure as Code: }}{Terraform, Bicep, ARM templates, PowerShell, Azure CLI}
+\item{\textbf{CI/CD Engineering: }}{Azure DevOps (YAML), GitLab CI, Jenkins, GitHub Actions}
+\item{\textbf{Containers \& Orchestration: }}{Docker, Kubernetes (GKE), Helm}
+\item{\textbf{Monitoring \& Logs}}{Prometheus, Azure Monitor, Google Cloud Monitoring}
+\item{\textbf{Networking \& Security}}{VNets, ExpressRoute, vWAN, NSGs, NVAs}
+\item{\textbf{Version Control Systems: }}{Git (Azure Repos, GitLab, GitHub)}
+
+
+
+
+ %---------------Certification----------------------------
+
+\vspace{2.5mm}
+
+
+\section{\textbf{Certification}}
+
+  \item{\textbf {Microsoft Certified: } DevOps Engineer Expert
+  \item \textbf{Microsoft Certified: } Azure Fundamentals
+  \item \textbf{Google Professional: } Cloud DevOps Engineer
+
+
+
+%-------------------------------------------
+\end{document}
