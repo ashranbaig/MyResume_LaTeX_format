@@ -1,4 +1,4 @@
-# 📄 Mirza Mohd Ashran Baig – LaTeX Resume
+# 📄 Make your own LaTeX Resume
 
 This repository contains a professional one-page resume written entirely in **LaTeX** using the `moderncv` class, tailored for **DevOps**, **SRE**, and other technology roles. It includes a clean design, ATS-friendly formatting, and support for CI/CD, cloud, and infrastructure-experience-heavy roles.
 
